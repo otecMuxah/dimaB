@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dimaB.iml" filepath="$PROJECT_DIR$/.idea/dimaB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dimaB-Byte-Store.iml" filepath="$PROJECT_DIR$/.idea/dimaB-Byte-Store.iml" />
     </modules>
   </component>
 </project>
