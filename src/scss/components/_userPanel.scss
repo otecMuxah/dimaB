@@ -1,0 +1,13 @@
+@import '../variables';
+
+
+.userPanel__wrapper{
+  border-bottom: 1px solid $gray-line;
+  padding: 40px 0;
+  background: $white;
+  width: 100vw;
+  height: 500px;
+  margin: 0 ;
+  border-radius: 10px;
+
+}
