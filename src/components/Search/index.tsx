@@ -1,26 +1,34 @@
-import React, {FC, useCallback, useState} from 'react';
+import React, {FC, useCallback, useRef, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import {setSearchValue} from "../../redux/filter/slice";
 import debounce from 'lodash.debounce';
 
+
 const Search:FC = () => {
     const dispatch=useDispatch;
     const [value, setValue] = useState<string>('');
-    const inputRef=React.useRef<HTMLInputElement>(null)
+    const inputRef=useRef<HTMLInputElement>(null)
 
     const onClickClear=()=>{
+        // @ts-ignore
         dispatch(setSearchValue(''));
         setValue('')
         inputRef.current?.focus();
         
     }
 
-    const updateSearchValue=useCallback(
-        debounce((str:string)=>{
-            dispatch(setSearchValue(str))
-        },150),[]
-    )
+    const updateSearchValue = React.useCallback(
+        debounce((str: string) => {
+            // @ts-ignore
+            dispatch(setSearchValue(str));
+        }, 150),
+        [],
+    );
 
+    const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+        updateSearchValue(event.target.value);
+    };
 
     return (
         <div className={'root'}>
@@ -37,7 +45,7 @@ const Search:FC = () => {
                     fill="none"
                     id="XMLID_42_"
                     r="9"
-                    stroke="#000000"
+                    stroke="#fafcfd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
@@ -46,7 +54,7 @@ const Search:FC = () => {
                 <line
                     fill="none"
                     id="XMLID_44_"
-                    stroke="#000000"
+                    stroke="#fafcfd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
