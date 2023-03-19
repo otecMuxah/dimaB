@@ -12,6 +12,7 @@ const Search:FC = () => {
         dispatch(setSearchValue(''));
         setValue('')
         inputRef.current?.focus();
+        
     }
 
     const updateSearchValue=useCallback(
