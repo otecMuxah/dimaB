@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Routes, Route} from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import FullProduct from "./pages/FullProduct";
 
 function App() {
   return (
