@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {setSearchValue} from "../../redux/filter/slice";
 import debounce from 'lodash.debounce';
 
+
 const Search:FC = () => {
     const dispatch=useDispatch;
     const [value, setValue] = useState<string>('');
@@ -44,7 +45,7 @@ const Search:FC = () => {
                     fill="none"
                     id="XMLID_42_"
                     r="9"
-                    stroke="#000000"
+                    stroke="#fafcfd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
@@ -53,7 +54,7 @@ const Search:FC = () => {
                 <line
                     fill="none"
                     id="XMLID_44_"
-                    stroke="#000000"
+                    stroke="#fafcfd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
