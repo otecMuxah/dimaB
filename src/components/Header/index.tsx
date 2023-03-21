@@ -9,12 +9,8 @@ import iconUser from '../../assets/img/icons/user-2-svgrepo-com.svg'
 import iconHeart from '../../assets/img/icons/heart-svgrepo-com.svg'
 import iconCompare from '../../assets/img/icons/scales-fill-svgrepo-com.svg'
 import Search from '../Search'
-// import '../../scss/App.scss'
+import {storeInfo} from "../../common/constants";
 
-export const storeInfo={
-    title:'Byte Store',
-    description:'Technology\'s  our World'
-}
 
 const Header = () => {
 
@@ -65,9 +61,12 @@ const Header = () => {
             {location.pathname !=='/cart' && <Search/>}
 
             <div className="header__userPanel">
-                <button onClick={handleUserPanel}>
+                {/*<button onClick={handleUserPanel}>*/}
+                {/*    <img className={'header__icon'} src={iconUser} alt="iconUser"/>*/}
+                {/*</button>*/}
+                <Link to={'/login'}>
                     <img className={'header__icon'} src={iconUser} alt="iconUser"/>
-                </button>
+                </Link>
             </div>
 
             <div className="header__compare">
