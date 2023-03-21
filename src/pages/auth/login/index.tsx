@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import axios from "axios";
-import {LOGIN_URL} from "../../../common/const/constants";
+import {LOGIN_URL} from "../../../common/constants";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 
@@ -75,11 +75,11 @@ const LoginPage: React.FC = () => {
                         <Link to={'/'}>Go to Home</Link>
                     </p>
                 </section>) : (
-                <section>
-                    <p ref={errRef}
-                       aria-live={'assertive'}
-                       className={errMsg ? 'login__errmsg' : 'login__offscreen'}>{errMsg}</p>
+                <div className={'login'}>
+                <section >
+
                     <h1>Sign in</h1>
+
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">Username</label>
                         <input type="text"
@@ -99,14 +99,20 @@ const LoginPage: React.FC = () => {
                                required
                         />
                         <button>Sign in</button>
+                        <div ref={errRef}
+                             aria-live={'assertive'}
+                             className={errMsg ? 'login__errmsg' : 'login__offscreen'}>
+                            {errMsg}
+                        </div>
                         <p>
                             Need an Account?<br/>
-                            <span className={'line'}>
+                            <span className={'login__line'}>
                                 <Link to={'/register'}>Sign Up</Link>
                             </span>
                         </p>
                     </form>
                 </section>
+                </div>
             )}
         </>
     );
