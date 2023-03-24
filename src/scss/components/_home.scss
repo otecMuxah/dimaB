@@ -1,0 +1,50 @@
+@import '../variables';
+
+.home{
+  height: 75vh;
+  width: 55vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $middle;
+  border-radius: 100px;
+
+
+
+  &__link{
+    //margin: 25px 0;
+    //text-underline-offset: -1089px;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+
+  }
+  &__link:first-child{
+    margin-top: 25px;
+
+
+  }
+  &__link__register{
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-underline-offset: 8px;
+    text-decoration: underline;
+    text-underline-color: #F1CDB3;
+    text-decoration-thickness:3px;;
+
+  }
+
+  &__link__register:hover {
+    color: $info;
+    outline: none;
+    text-underline-offset: -37px !important;
+    text-decoration: underline;
+    text-underline-color: #F1CDB3;
+    text-decoration-thickness:3px;;
+  }
+
+}
+

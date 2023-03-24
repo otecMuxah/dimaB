@@ -1,0 +1,67 @@
+@import '../variables';
+
+.register{
+
+  height: 75vh;
+  width: 55vw;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $middle;
+  border-radius: 100px;
+
+span{
+  margin: 0 60px;
+}
+
+  p
+  {margin-top: 50px;
+
+    text-align: center;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+
+  }
+  span{
+    margin: 0 30px;
+  }
+  label{
+    text-align: end;
+    font-size: 23px;
+    opacity: 0.3;
+    margin: 5px;
+letter-spacing: 0.1rem;
+
+
+
+
+  }
+  input{
+    border-radius: 15px;
+    border: 2px  solid $middle;
+    color: $blue;
+    height: 55px;
+    font-size: 21px;
+    text-align: start;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+    padding-left: 25px;
+    transition: 1.5s;
+
+  }
+  input:focus{
+    border: none;
+    border-bottom:20px solid $lightblue;
+    opacity: 1;
+  }
+  input:last-of-type{
+    margin-top: 4px;
+  }
+
+
+}

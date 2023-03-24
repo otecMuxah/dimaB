@@ -1,0 +1,43 @@
+@import '_variables.scss';
+@import './libs/normalize';
+@import './components/all';
+
+
+.app{
+  display: flex;
+  &__footer{
+    display: flex;
+    flex-direction: row;
+  position: absolute;
+    bottom: 1%;
+    right: 85%;
+
+    span{
+      letter-spacing: 0.2em;
+      font-size: 15px;
+      color:#F1CDB3
+    }
+
+
+    a {
+      color: $white;
+      font-weight: 700;
+      text-underline-offset: -1089px;
+      text-decoration: underline;
+      text-underline-color: #F1CDB3;
+      text-decoration-thickness:3px;;
+      transition: 1s;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+      color: $info;
+      outline: none;
+      text-underline-offset: 8px;
+      text-decoration: underline;
+      text-underline-color: #F1CDB3;
+      text-decoration-thickness:3px;;
+    }
+}
+}
