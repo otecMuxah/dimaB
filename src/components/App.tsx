@@ -16,7 +16,7 @@ function App() {
           </Routes>
           <div className={'app__footer'}>
               <span>DEV</span>
-              <a target={'_blank'} href="https://github.com/dmaberlin1"> dmaberlin1</a>
+              <a draggable={'false'} target={'_blank'} href="https://github.com/dmaberlin1"> dmaberlin1</a>
           </div>
       </div>
   );
