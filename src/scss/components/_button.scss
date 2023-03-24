@@ -67,3 +67,12 @@ a:hover + .icon{
 }
 
 }
+
+@media (max-height: 850px){
+  .button{
+    top: 64%;
+  }
+  //p{
+  //  font-size: 20px;
+  //}
+}
