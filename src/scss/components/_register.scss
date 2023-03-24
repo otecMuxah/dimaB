@@ -63,5 +63,14 @@ letter-spacing: 0.1rem;
     margin-top: 4px;
   }
 
+  @media (max-height: 850px){
+    .login{
+      height: 80vh;
+      label{
+        font-size: 20px;
+      }
+    }
+  }
+
 
 }
