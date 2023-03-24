@@ -65,3 +65,19 @@ letter-spacing: 0.1rem;
 
 
 }
+
+@media (max-height: 850px){
+  .register{
+    height: 80vh;
+    label{
+      font-size: 18px;
+    }
+    input{
+      height: 50px;
+
+    }
+    p{
+     font-size:  13px;
+    }
+  }
+}
