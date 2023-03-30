@@ -11,13 +11,15 @@ const MainPage = () => {
     const dispatch=useAppDispatch()
     const {isAuth,email}=useAuth()
 
+
     return isAuth ?(
         <div className='main'>
            <h1>Welcome to you personal page</h1>
             <span>{email}</span>
             <Button
             onClick={()=>dispatch(removeUser())}
-            >Log out from {email}</Button>
+            title={`logout from ${email}`}
+            ></Button>
         </div>
     ):(
 

@@ -22,6 +22,7 @@
     a {
       color: $white;
       font-weight: 700;
+      font-size: 20px;
       text-underline-offset: -1089px;
       text-decoration: underline;
       text-underline-color: #F1CDB3;
@@ -40,4 +41,36 @@
       text-decoration-thickness:3px;;
     }
 }
+}
+
+@media (max-width: 1000px) {
+
+  .app {
+    display: flex;
+
+    &__footer {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 1%;
+      right: 78%;
+
+    }
+  }
+}
+
+@media (max-width: 720px) {
+
+  .app {
+    display: flex;
+
+    &__footer {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 1%;
+      right:65%;
+
+    }
+  }
 }
