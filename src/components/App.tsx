@@ -2,17 +2,18 @@ import React from 'react';
 import '../scss/App.scss';
 import {Routes, Route} from "react-router-dom";
 import LoginPage from "./LoginPage";
-import Home from "./Home";
+import HomePage from "./HomePage";
 import RegisterPage from "./RegisterPage";
+import {ROUTES} from "../common/constants";
 
 function App() {
   return (
       <div className={'app'}>
 
           <Routes>
-                <Route path={'/'} element={<Home/>}></Route>
-                <Route path={'/login'} element={<LoginPage/>}></Route>
-                <Route path={'/register'} element={<RegisterPage/>}></Route>
+                <Route  path={ROUTES.HOME} element={<HomePage/>}></Route>
+                <Route path={ROUTES.LOGIN} element={<LoginPage/>}></Route>
+                <Route path={ROUTES.REGISTER} element={<RegisterPage/>}></Route>
           </Routes>
           <div className={'app__footer'}>
               <span>DEV</span>

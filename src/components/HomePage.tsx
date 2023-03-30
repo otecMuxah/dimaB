@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {ROUTES} from "../common/constants";
+import { redirect } from "react-router-dom";
 
-const Home = () => {
+const HomePage = () => {
     const name="User"
 
     return (
@@ -14,4 +15,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomePage;
