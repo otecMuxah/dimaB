@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-// import database from '../common/mockdata'
+// import database from '../common/mock-data'
 import {Link} from "react-router-dom";
 import Button from "./UI/Button";
+import {ROUTES} from "../common/constants";
 
 
 const errors = {
@@ -37,7 +38,7 @@ const LoginPage = (props:any) => {
             </form>
             <div>
             <p>Don't have an account? </p>
-            <Link to="/register" ><span> Register here</span></Link>
+            <Link to={ROUTES.REGISTER} ><span> Register here</span></Link>
             </div>
         </div>
     );
