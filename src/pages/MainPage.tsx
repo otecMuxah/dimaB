@@ -16,10 +16,8 @@ const MainPage = () => {
         <div className='main'>
            <h1>Welcome to you personal page</h1>
             <span>{email}</span>
-            <Button
-            onClick={()=>dispatch(removeUser())}
-            title={`logout from ${email}`}
-            ></Button>
+            <button onClick={()=>dispatch(removeUser())}
+            >logout from {email}</button>
         </div>
     ):(
 
