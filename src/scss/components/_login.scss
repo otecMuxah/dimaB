@@ -52,11 +52,11 @@
 
 }
 
-@media (max-height: 850px){
+@media (max-width: 450px){
   .login{
-    height: 80vh;
-  label{
-    font-size: 20px;
-  }
+   span{
+     letter-spacing: 2px;
+     font-size: 12px;
+   }
   }
 }
