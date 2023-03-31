@@ -7,7 +7,14 @@ export const ROUTES = {
 };
 
 
+export const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+export const PWD_REGEX = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,24})$/;
 
+
+
+
+
+//эти константы созданны для демо версии ,в реальном проекте
 export const REACT_APP_FIREBASE_API_KEY='AIzaSyCgaSofAhjAe7kyRHIQyBfAePRv2lMvK2A'
 export const REACT_APP_FIREBASE_AUTH_DOMAIN='auth-app-8bd17.firebaseapp.com'
 export const REACT_APP_FIREBASE_PROJECT_ID='auth-app-8bd17'

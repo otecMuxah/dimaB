@@ -4,12 +4,13 @@ interface ButtonProps {
     title: string;
     type?:any;
     onclick?: () => void;
+    disabled?:boolean
 }
 
-const Button:FC<ButtonProps> = ({title,type,onclick}) => {
+const Button:FC<ButtonProps> = ({title,type,onclick,disabled=false}) => {
 
     return (
-        <button onClick={onclick} className={'button'} type={type}>{title}</button>
+        <button disabled={disabled} onClick={onclick} className={'button'} type={type}>{title}</button>
     );
 };
 
