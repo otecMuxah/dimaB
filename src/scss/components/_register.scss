@@ -1,5 +1,6 @@
 @import '../variables';
 
+
 .register{
 
   height: 80vh;
@@ -18,7 +19,8 @@ span{
 
   p
   {margin-top: 50px;
-
+      display: flex;
+    flex-direction: column;
     text-align: center;
   }
 
@@ -64,6 +66,33 @@ letter-spacing: 0.1rem;
     margin-top: 4px;
   }
 
+  &__instructions {
+    font-size: 0.9rem;
+    border-radius: 100px;
+    background: $lightblue;
+    color: $white;
+    padding: 0.1rem;
+    position: relative;
+    bottom: -10px;
+  }
+
+
+
+  &__errmsg {
+    font-size: 15px;
+    color: $warning;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+  &__offscreen {
+    position: absolute;
+    left: -9999px;
+  }
+
+
 
 }
 
@@ -92,3 +121,5 @@ letter-spacing: 0.1rem;
     }
   }
 }
+
+

@@ -50,6 +50,36 @@
   }
 
 
+  &__instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+  }
+
+
+
+  &__errmsg {
+    font-size: 15px;
+    color: $warning;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+  &__offscreen {
+    position: absolute;
+    left: -9999px;
+  }
+
+
+
+
+
 }
 
 @media (max-width: 450px){

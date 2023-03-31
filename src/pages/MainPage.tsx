@@ -8,20 +8,20 @@ import Button from "../components/UI/Button";
 
 
 const MainPage = () => {
-    const dispatch=useAppDispatch()
-    const {isAuth,email}=useAuth()
+    const dispatch = useAppDispatch()
+    const {isAuth, email} = useAuth()
 
 
-    return isAuth ?(
+    return isAuth ? (
         <div className='main'>
-           <h1>Welcome to you personal page</h1>
+            <h1>Welcome to you personal page</h1>
             <span>{email}</span>
             <Button
-            onClick={()=>dispatch(removeUser())}
-            title={`logout from ${email}`}
+                title={`logout from ${email}`}
+                onclick={() => dispatch(removeUser())}
             ></Button>
         </div>
-    ):(
+    ) : (
 
         <Navigate to={ROUTES.HOME}></Navigate>
 
