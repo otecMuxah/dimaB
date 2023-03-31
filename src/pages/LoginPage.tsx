@@ -50,7 +50,7 @@ const LoginPage = () => {
                        placeholder="********" id="password"
                        autoComplete={'off'}
                        name="password" />
-                <Button className="login__button"  type="submit" title={'login'}></Button>
+                <Button  type="submit" title={'login'}></Button>
             </form>
             <div>
             <p>Don't have an account? </p>
