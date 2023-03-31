@@ -39,9 +39,6 @@ const RegisterPage = () => {
         setValidEmail(EMAIL_REGEX.test(email))
     }, [email]);
 
-    // useEffect(() => {
-    //     setValidPass(PWD_REGEX.test(pass))
-    // }, [pass]);
 
 
     useEffect(() => {

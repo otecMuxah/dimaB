@@ -13,9 +13,14 @@ const LoginPage = () => {
     const userRef = useRef(null);
     const errRef = useRef(null);
 
+
+
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [errMsg, setErrMsg] = useState('');
+
+    const [emailFocus, setEmailFocus] = useState(false);
+    const [validEmail, setValidEmail] = useState(false);
 
 
     useEffect(() => {
@@ -58,6 +63,20 @@ const LoginPage = () => {
     }
 
 
+    useEffect(() => {
+        // @ts-ignore
+        userRef.current.focus()
+    }, []);
+
+
+    useEffect(() => {
+        setValidEmail(EMAIL_REGEX.test(email))
+    }, [email]);
+
+
+
+
+
     return (
         <div className={'login'}>
 
@@ -76,7 +95,20 @@ const LoginPage = () => {
                        ref={userRef}
                        onChange={(e) => setEmail(e.target.value)}
                        required
-                       type="email" placeholder="email" id="email" name="email" autoComplete={'off'}/>
+                       type="email" placeholder="email"
+                       id="email" name="email"
+                       aria-invalid={validEmail ? "false" : "true"}
+                       aria-describedby="emailnote"
+                       onFocus={() => setEmailFocus(true)}
+                       onBlur={() => setEmailFocus(false)}
+                       autoComplete={'off'}/>
+
+                <p id="emailnote"
+                   className={emailFocus && email && !validEmail
+                       ? "register__instructions" : "register__offscreen"}>
+                    <span>The e-mail address is incorrect.</span>
+                    <span>Make sure there is an @ after the name and remove any extra dots or symbols</span>
+                </p>
 
                 <label htmlFor="password">password</label>
                 <input value={pass}
