@@ -2,7 +2,6 @@
 
 
 .register{
-
   height: 80vh;
   width: 55vw;
   margin: 25px auto;
@@ -10,7 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: $middle;
+  background-color: $middleblue;
   border-radius: 100px;
 
 span{
@@ -39,14 +38,10 @@ span{
     opacity: 0.3;
     margin: 5px;
 letter-spacing: 0.1rem;
-
-
-
-
   }
   input{
     border-radius: 15px;
-    border: 2px  solid $middle;
+    border: 2px  solid $middleblue;
     color: $blue;
     height: 55px;
     font-size: 21px;
@@ -56,27 +51,25 @@ letter-spacing: 0.1rem;
     padding-left: 25px;
     transition: 1.5s;
 
-  }
-  input:focus{
+
+  &:focus{
     border: none;
-    border-bottom:20px solid $lightblue;
+    border-bottom:20px solid $deepblue;
     opacity: 1;
   }
-  input:last-of-type{
+  &:last-of-type{
     margin-top: 4px;
   }
-
+  }
   &__instructions {
     font-size: 0.9rem;
     border-radius: 100px;
-    background: $lightblue;
+    background: $deepblue;
     color: $white;
     padding: 0.1rem;
     position: relative;
     bottom: -10px;
   }
-
-
 
   &__errmsg {
     font-size: 15px;
@@ -86,13 +79,10 @@ letter-spacing: 0.1rem;
     margin-bottom: 0.5rem;
   }
 
-
   &__offscreen {
     position: absolute;
-    left: -9999px;
+    left: $offscreen;
   }
-
-
 
 }
 
@@ -121,5 +111,3 @@ letter-spacing: 0.1rem;
     }
   }
 }
-
-

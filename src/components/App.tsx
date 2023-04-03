@@ -7,9 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import {ROUTES} from "../common/constants";
 import MainPage from "../pages/MainPage";
 
-function App() {
-    // @ts-ignore
-
+function App():JSX.Element {
     return (
         <div className={'app'}>
 

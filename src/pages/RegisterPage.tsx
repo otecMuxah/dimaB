@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, NavigateFunction, useNavigate} from "react-router-dom";
 import {ROUTES} from "../common/constants";
 import {useAppDispatch} from "../hooks/redux-hooks";
 import {createUserWithEmailAndPassword, getAuth} from "firebase/auth";
@@ -7,13 +7,12 @@ import {setUser} from "../store/slices/userSlice";
 import Button from "../components/UI/Button";
 import {EMAIL_REGEX} from "../common/constants";
 import {PWD_REGEX} from "../common/constants";
+import {AnyAction, ThunkDispatch} from "@reduxjs/toolkit";
 
 
-const RegisterPage = () => {
-    const navigate = useNavigate()
-    const dispatch = useAppDispatch();
-    const userRef = useRef(null)
-    const errRef = useRef(null)
+const RegisterPage = ():JSX.Element => {
+    const navigate:NavigateFunction = useNavigate();
+    const dispatch:ThunkDispatch<{user: {email: null|string, token: null|string, id: null|number}}, undefined, AnyAction> = useAppDispatch();;
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -30,42 +29,27 @@ const RegisterPage = () => {
 
 
     useEffect(() => {
-        // @ts-ignore
-        userRef.current.focus()
-    }, []);
-
-
-    useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email))
-    }, [email]);
-
-
-
-    useEffect(() => {
-        setValidPass(PWD_REGEX.test(pass))
-        setValidMatch(pass === matchPass)
-    }, [pass, matchPass]);
-
-
-    useEffect(() => {
         setErrMsg('')
-    }, [email, pass, matchPass]);
+        setValidPass(PWD_REGEX.test(pass))
+        setValidEmail(EMAIL_REGEX.test(email))
+        setValidMatch(pass === matchPass)
+
+    }, [email,pass, matchPass]);
 
 
-    const handleRegister = (event: any, email: string, password: string) => {
+    const handleRegister = (event: any) => {
         event.preventDefault()
 
-        const v1 = EMAIL_REGEX.test(email);
-        const v2 = PWD_REGEX.test(password);
-        if (!v1 || !v2) {
+        const verifiedEmail = EMAIL_REGEX.test(email);
+        const verifiedPass = PWD_REGEX.test(pass);
+        if (!verifiedEmail || !verifiedPass) {
             setErrMsg('Invalid Entry')
             return;
         }
 
         const auth = getAuth()
 
-
-        createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, pass)
             .then(({user}) => {
                 console.log(user)
                 dispatch(setUser({
@@ -83,31 +67,27 @@ const RegisterPage = () => {
                 } else {
                     setErrMsg('Registration Failed')
                 }
-
-                // @ts-ignore
-                errRef.current.focus();
             })
 
     }
-
 
     return (
         <div className={'register'}>
 
             <h2>Register page</h2>
-            <p ref={errRef}
+            <p
                className={errMsg ? "register__errmsg" : "register__offscreen"}
                aria-live="assertive">
                 {errMsg}
             </p>
             <form className="register-form"
-                  onSubmit={(e) => handleRegister(e, email, pass)}>
+                  onSubmit={(e) => handleRegister(e)}>
 
                 <label htmlFor="email">email</label>
                 <input
                     type="email" placeholder="email@gmail.com"
                     autoComplete={'off'}
-                    ref={userRef}
+                    autoFocus={true}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -128,7 +108,6 @@ const RegisterPage = () => {
                 <label htmlFor="password">password</label>
                 <input autoComplete={'off'}
                        required
-                       ref={userRef}
                        onChange={(e) => setPass(e.target.value)}
                        value={pass}
                        aria-invalid={validPass ? "false" : "true"}
@@ -170,7 +149,6 @@ const RegisterPage = () => {
                     <span> Login here</span>
                 </Link>
             </div>
-
         </div>
     );
 };

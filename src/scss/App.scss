@@ -6,8 +6,8 @@
 .app{
   display: flex;
   &__footer{
+
     display: flex;
-    flex-direction: row;
   position: absolute;
     bottom: 1%;
     right: 85%;
@@ -28,17 +28,18 @@
       text-underline-color: #F1CDB3;
       text-decoration-thickness:3px;;
       transition: 1s;
-    }
 
-    a:hover,
-    a:active,
-    a:focus {
+
+    &:hover,
+    &:active,
+    &:focus {
       color: $info;
       outline: none;
       text-underline-offset: 8px;
       text-decoration: underline;
       text-underline-color: #F1CDB3;
       text-decoration-thickness:3px;;
+    }
     }
 }
 }

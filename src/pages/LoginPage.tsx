@@ -1,18 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, NavigateFunction, useNavigate} from "react-router-dom";
+import {AnyAction, ThunkDispatch} from "@reduxjs/toolkit";
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {useAppDispatch} from "../hooks/redux-hooks";
 import Button from "../components/UI/Button";
 import {EMAIL_REGEX, PWD_REGEX, ROUTES} from "../common/constants";
-import {useAppDispatch} from "../hooks/redux-hooks";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import {setUser} from "../store/slices/userSlice";
 
 
-const LoginPage = () => {
-    const dispatch = useAppDispatch()
-    let navigate = useNavigate();
-    const userRef = useRef(null);
-    const errRef = useRef(null);
-
+const LoginPage = ():JSX.Element => {
+    const dispatch:ThunkDispatch<{user: {email: null|string, token: null|string, id: null|number}}, undefined, AnyAction> = useAppDispatch()
+    let navigate:NavigateFunction = useNavigate();
 
 
     const [email, setEmail] = useState('');
@@ -24,20 +22,15 @@ const LoginPage = () => {
 
 
     useEffect(() => {
-        // @ts-ignore
-        userRef.current.focus()
-    }, []);
-
-
-    useEffect(() => {
         setErrMsg('')
+        setValidEmail(EMAIL_REGEX.test(email))
     }, [email, pass]);
 
 
-    const handleLogin = (event: any, email: string, password: string) => {
-        event.preventDefault()
-        const auth = getAuth()
-        signInWithEmailAndPassword(auth, email, password)
+    const handleLogin = (event: any) => {
+        event.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, pass)
             .then(({user}) => {
                 console.log(user);
                 dispatch(setUser({
@@ -56,43 +49,24 @@ const LoginPage = () => {
             } else {
                 setErrMsg('Login Failed');
             }
-            // @ts-ignore
-            errRef.current.focus();
         })
 
     }
-
-
-    useEffect(() => {
-        // @ts-ignore
-        userRef.current.focus()
-    }, []);
-
-
-    useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email))
-    }, [email]);
-
-
-
-
-
     return (
         <div className={'login'}>
 
-
             <h2>Login page</h2>
-            <p ref={errRef}
+            <p
                className={errMsg ? "login__errmsg" : "login__offscreen"}
                aria-live="assertive">
                 {errMsg}
             </p>
             <form className="login__form"
-                  onSubmit={(event) => handleLogin(event, email, pass)
+                  onSubmit={(event) => handleLogin(event)
                   }>
-                <label htmlFor="login">email</label>
+                <label htmlFor="email">email</label>
                 <input value={email}
-                       ref={userRef}
+                       autoFocus={true}
                        onChange={(e) => setEmail(e.target.value)}
                        required
                        type="email" placeholder="email"
