@@ -1,14 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {ROUTES} from "../common/constants";
-
 import {useAuth} from "../hooks/use-auth";
 
-
-
 const HomePage = () => {
-    const name="User"
-    const {isAuth,email}=useAuth()
+    const name:string="User"
+    const {isAuth,email}:{isAuth:boolean,email:string|null}=useAuth()
 
     return (
         <div className='home'>

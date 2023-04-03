@@ -1,6 +1,6 @@
 @import '../variables';
 
-.login{
+.login {
   height: 75vh;
   width: 55vw;
   margin: 50px auto;
@@ -8,28 +8,32 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: $middle;
+  background-color: $middleblue;
   border-radius: 100px;
-  form{
+
+  form {
     display: flex;
     width: 35vw;
     flex-direction: column;
 
   }
-  span{
+
+  span {
     margin: 0 30px;
     font-weight: 700;
   }
-  label{
+
+  label {
     text-align: center;
     font-size: 40px;
     opacity: 0.1;
     margin: 10px;
   }
-  input{
+
+  input {
     border-radius: 15px;
 
-    border: 2px  solid $middle;
+    border: 2px solid $middleblue;
     color: $blue;
     height: 55px;
     font-size: 25px;
@@ -39,13 +43,15 @@
     padding-left: 25px;
     transition: 1.5s;
   }
-  input:focus{
+
+  input:focus {
     border: none;
 
-    border-bottom:20px solid $lightblue;
+    border-bottom: 20px solid $deepblue;
     opacity: 1;
   }
-  p{
+
+  p {
     text-align: center;
   }
 
@@ -54,12 +60,11 @@
     font-size: 0.75rem;
     border-radius: 0.5rem;
     background: #000;
-    color: #fff;
+    color: $brightwhite;
     padding: 0.25rem;
     position: relative;
     bottom: -10px;
   }
-
 
 
   &__errmsg {
@@ -73,20 +78,15 @@
 
   &__offscreen {
     position: absolute;
-    left: -9999px;
+    left: $offscreen;
   }
-
-
-
-
-
 }
 
-@media (max-width: 450px){
-  .login{
-   span{
-     letter-spacing: 2px;
-     font-size: 12px;
-   }
+@media (max-width: 450px) {
+  .login {
+    span {
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
   }
 }

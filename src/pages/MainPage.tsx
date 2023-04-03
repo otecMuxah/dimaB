@@ -5,11 +5,12 @@ import {useAuth} from "../hooks/use-auth";
 import {removeUser} from "../store/slices/userSlice";
 import {useAppDispatch} from "../hooks/redux-hooks";
 import Button from "../components/UI/Button";
+import {AnyAction, ThunkDispatch} from "@reduxjs/toolkit";
 
 
-const MainPage = () => {
-    const dispatch = useAppDispatch()
-    const {isAuth, email} = useAuth()
+const MainPage = ():JSX.Element => {
+    const dispatch:ThunkDispatch<{user: {email: null|string, token: null|string, id: null|number}}, undefined, AnyAction> = useAppDispatch();
+    const {isAuth, email}:{isAuth:boolean,email:string|null} = useAuth();
 
 
     return isAuth ? (
@@ -22,10 +23,7 @@ const MainPage = () => {
             ></Button>
         </div>
     ) : (
-
         <Navigate to={ROUTES.HOME}></Navigate>
-
-
     )
 };
 

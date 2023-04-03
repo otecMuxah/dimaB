@@ -1,6 +1,5 @@
 @import '../variables';
 
-
 * {
   padding: 0;
   margin: 0;
@@ -9,8 +8,10 @@
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
   -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -moz-user-select: none;      /* Firefox */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -moz-user-select: none; /* Firefox */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -18,14 +19,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-
-
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: $light;
+  background: $lightblue;
   color: $white;
-  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -33,23 +29,24 @@ a {
 
   text-underline-offset: -37px;
   text-decoration: underline;
-  text-underline-color: #F1CDB3;
-  text-decoration-thickness:3px;;
+  text-underline-color: $info;
+  text-decoration-thickness: 3px;;
   transition: 0.5s;
+
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $info;
+    outline: none;
+    text-underline-offset: 8px;
+    text-decoration: underline;
+    text-underline-color: $info;
+    text-decoration-thickness: 3px;;
+  }
 }
 
-a:hover,
-a:active,
-a:focus {
-  color: $info;
-  outline: none;
-  text-underline-offset: 8px;
-  text-decoration: underline;
-  text-underline-color: #F1CDB3;
-  text-decoration-thickness:3px;;
-}
-
-span{
+span {
   font-weight: 600;
   letter-spacing: 4px;
 
@@ -72,13 +69,3 @@ h6 {
   padding: 0;
   text-align: center;
 }
-
-//@mixin noselect {
-//  -webkit-touch-callout: none; /* iOS Safari */
-//  -webkit-user-select: none; /* Safari */
-//
-//  -moz-user-select: none; /* Old versions of Firefox */
-//  -ms-user-select: none; /* Internet Explorer/Edge */
-//  user-select: none; /* Non-prefixed version, currently
-//                                  supported by Chrome, Opera and Firefox */
-//}

@@ -8,25 +8,19 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: $middle;
+  background-color: $middleblue;
   border-radius: 100px;
 
-
-
   &__link{
-    //margin: 25px 0;
-    //text-underline-offset: -1089px;
     font-size: 42px;
     font-weight: 600;
     letter-spacing: 0.2em;
 
-  }
-  &__link:first-child{
+  &:first-child{
     margin-top: 25px;
-
-
   }
-  &__link__register{
+
+  &__register{
     font-size: 42px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -35,9 +29,8 @@
     text-underline-color: #F1CDB3;
     text-decoration-thickness:3px;;
 
-  }
 
-  &__link__register:hover {
+  &:hover {
     color: $info;
     outline: none;
     text-underline-offset: -37px !important;
@@ -45,6 +38,7 @@
     text-underline-color: #F1CDB3;
     text-decoration-thickness:3px;;
   }
-
+  }
+  }
 }
 
