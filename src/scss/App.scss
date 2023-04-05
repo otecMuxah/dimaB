@@ -1,0 +1,70 @@
+@import '_variables.scss';
+@import './libs/normalize';
+@import './components/all';
+
+
+.app {
+  display: flex;
+
+  &__footer {
+
+    display: flex;
+    position: absolute;
+    bottom: 1%;
+    right: 85%;
+
+    span {
+      letter-spacing: 0.2em;
+      font-size: 15px;
+      color: $info
+    }
+
+
+    a {
+      color: $white;
+      font-weight: 700;
+      font-size: 20px;
+      text-underline-offset: -1089px;
+      text-decoration: underline;
+      text-underline-color: $info;
+      text-decoration-thickness: 3px;;
+      transition: 1s;
+
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $info;
+        outline: none;
+        text-underline-offset: 8px;
+        text-decoration: underline;
+        text-underline-color: $info;
+        text-decoration-thickness: 3px;;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .app {
+    display: flex;
+
+    &__footer {
+      bottom: 1%;
+      right: 78%;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+
+  .app {
+    display: flex;
+
+    &__footer {
+      bottom: 1%;
+      right: 65%;
+    }
+  }
+}

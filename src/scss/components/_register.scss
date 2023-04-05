@@ -1,0 +1,121 @@
+@import '../variables';
+
+
+.register {
+  height: 80vh;
+  width: 55vw;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $middleblue;
+  border-radius: 100px;
+
+  span {
+    margin: 0 60px;
+  }
+
+  p {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+
+  }
+
+  span {
+    margin: 0 30px;
+  }
+
+  label {
+    text-align: end;
+    font-size: 23px;
+    opacity: 0.3;
+    margin: 5px;
+    letter-spacing: 0.1rem;
+  }
+
+  input {
+    border-radius: 15px;
+    border: 2px solid $middleblue;
+    color: $blue;
+    height: 55px;
+    font-size: 21px;
+    text-align: start;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+    padding-left: 25px;
+    transition: 1.5s;
+
+
+    &:focus {
+      border: none;
+      border-bottom: 20px solid $deepblue;
+      opacity: 1;
+    }
+
+    &:last-of-type {
+      margin-top: 4px;
+    }
+  }
+
+  &__instructions {
+    font-size: 0.9rem;
+    border-radius: 100px;
+    background: $deepblue;
+    color: $white;
+    padding: 0.1rem;
+    position: relative;
+    bottom: -10px;
+  }
+
+  &__errmsg {
+    font-size: 15px;
+    color: $warning;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__offscreen {
+    position: absolute;
+    left: $offscreen;
+  }
+
+}
+
+@media (max-height: 850px) {
+  .register {
+    height: 80vh;
+
+    label {
+      font-size: 18px;
+    }
+
+    input {
+      height: 50px;
+
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .register {
+    span {
+
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+  }
+}

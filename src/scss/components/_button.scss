@@ -1,0 +1,28 @@
+@import '../variables';
+
+button {
+  margin: 50px auto;
+  display: block;
+  width: 24vw;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgba(86, 90, 177, 0.96);
+  text-align: center;
+  color: $brightwhite;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: 3px solid rgba(86, 90, 177, 0.96);
+  transition: all .35s;
+}
+
+button:hover {
+  width: 35vw;
+  border: 3px solid $blue;
+  border-radius: 15px;
+  background: transparent;
+  letter-spacing: 1em;
+  color: $blue;
+}

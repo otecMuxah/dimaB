@@ -1,0 +1,31 @@
+@import '../variables';
+
+.main {
+  height: 75vh;
+  width: 70vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: $info;
+  background-color: $middleblue;
+  border-radius: 100px;
+
+  span {
+    opacity: 0.9;
+    font-size: 35px;
+    font-weight: 700;
+    color: $info;
+    letter-spacing: 0.3em;
+  }
+
+
+}
+
+@media (max-width: 1000px) {
+  span {
+    font-size: 20px;
+  }
+}
+
