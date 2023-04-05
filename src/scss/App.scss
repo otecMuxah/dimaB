@@ -26,7 +26,7 @@
       font-size: 20px;
       text-underline-offset: -1089px;
       text-decoration: underline;
-      text-underline-color:  $info;
+      text-underline-color: $info;
       text-decoration-thickness: 3px;;
       transition: 1s;
 
@@ -38,7 +38,7 @@
         outline: none;
         text-underline-offset: 8px;
         text-decoration: underline;
-        text-underline-color:  $info;
+        text-underline-color: $info;
         text-decoration-thickness: 3px;;
       }
     }
@@ -51,12 +51,8 @@
     display: flex;
 
     &__footer {
-      display: flex;
-      flex-direction: row;
-      position: absolute;
       bottom: 1%;
       right: 78%;
-
     }
   }
 }
@@ -67,12 +63,8 @@
     display: flex;
 
     &__footer {
-      display: flex;
-      flex-direction: row;
-      position: absolute;
       bottom: 1%;
       right: 65%;
-
     }
   }
 }
