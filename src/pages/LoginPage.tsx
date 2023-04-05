@@ -8,9 +8,11 @@ import {EMAIL_REGEX, PWD_REGEX, ROUTES} from "../common/constants";
 import {setUser} from "../store/slices/userSlice";
 
 
-const LoginPage = ():JSX.Element => {
-    const dispatch:ThunkDispatch<{user: {email: null|string, token: null|string, id: null|number}}, undefined, AnyAction> = useAppDispatch()
-    let navigate:NavigateFunction = useNavigate();
+const LoginPage = (): JSX.Element => {
+    const dispatch: ThunkDispatch<{
+        user: { email: null | string, token: null | string, id: null | number }
+    }, undefined, AnyAction> = useAppDispatch()
+    let navigate: NavigateFunction = useNavigate();
 
 
     const [email, setEmail] = useState('');
@@ -57,8 +59,8 @@ const LoginPage = ():JSX.Element => {
 
             <h2>Login page</h2>
             <p
-               className={errMsg ? "login__errmsg" : "login__offscreen"}
-               aria-live="assertive">
+                className={errMsg ? "login__errmsg" : "login__offscreen"}
+                aria-live="assertive">
                 {errMsg}
             </p>
             <form className="login__form"

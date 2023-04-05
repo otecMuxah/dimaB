@@ -3,19 +3,20 @@
 @import './components/all';
 
 
-.app{
+.app {
   display: flex;
-  &__footer{
+
+  &__footer {
 
     display: flex;
-  position: absolute;
+    position: absolute;
     bottom: 1%;
     right: 85%;
 
-    span{
+    span {
       letter-spacing: 0.2em;
       font-size: 15px;
-      color:$info
+      color: $info
     }
 
 
@@ -26,22 +27,22 @@
       text-underline-offset: -1089px;
       text-decoration: underline;
       text-underline-color: #F1CDB3;
-      text-decoration-thickness:3px;;
+      text-decoration-thickness: 3px;;
       transition: 1s;
 
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: $info;
-      outline: none;
-      text-underline-offset: 8px;
-      text-decoration: underline;
-      text-underline-color: #F1CDB3;
-      text-decoration-thickness:3px;;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $info;
+        outline: none;
+        text-underline-offset: 8px;
+        text-decoration: underline;
+        text-underline-color: #F1CDB3;
+        text-decoration-thickness: 3px;;
+      }
     }
-    }
-}
+  }
 }
 
 @media (max-width: 1000px) {
@@ -70,7 +71,7 @@
       flex-direction: row;
       position: absolute;
       bottom: 1%;
-      right:65%;
+      right: 65%;
 
     }
   }

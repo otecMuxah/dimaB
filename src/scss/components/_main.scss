@@ -3,7 +3,7 @@
 .main {
   height: 75vh;
   width: 70vw;
-  margin:50px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -12,18 +12,19 @@
   background-color: $middleblue;
   border-radius: 100px;
 
-span{
-  opacity: 0.9;
-  font-size: 35px;
-  font-weight: 700;
-  color: $info;
-  letter-spacing: 0.3em;
-}
+  span {
+    opacity: 0.9;
+    font-size: 35px;
+    font-weight: 700;
+    color: $info;
+    letter-spacing: 0.3em;
+  }
 
 
 }
+
 @media (max-width: 1000px) {
-  span{
+  span {
     font-size: 20px;
   }
 }

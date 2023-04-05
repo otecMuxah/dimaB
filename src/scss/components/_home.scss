@@ -1,6 +1,6 @@
 @import '../variables';
 
-.home{
+.home {
   height: 75vh;
   width: 55vw;
   margin: 50px auto;
@@ -11,34 +11,34 @@
   background-color: $middleblue;
   border-radius: 100px;
 
-  &__link{
+  &__link {
     font-size: 42px;
     font-weight: 600;
     letter-spacing: 0.2em;
 
-  &:first-child{
-    margin-top: 25px;
-  }
+    &:first-child {
+      margin-top: 25px;
+    }
 
-  &__register{
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-underline-offset: 8px;
-    text-decoration: underline;
-    text-underline-color: #F1CDB3;
-    text-decoration-thickness:3px;;
+    &__register {
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-underline-offset: 8px;
+      text-decoration: underline;
+      text-underline-color: #F1CDB3;
+      text-decoration-thickness: 3px;;
 
 
-  &:hover {
-    color: $info;
-    outline: none;
-    text-underline-offset: -37px !important;
-    text-decoration: underline;
-    text-underline-color: #F1CDB3;
-    text-decoration-thickness:3px;;
-  }
-  }
+      &:hover {
+        color: $info;
+        outline: none;
+        text-underline-offset: -37px !important;
+        text-decoration: underline;
+        text-underline-color: #F1CDB3;
+        text-decoration-thickness: 3px;;
+      }
+    }
   }
 }
 

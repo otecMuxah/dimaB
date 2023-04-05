@@ -7,16 +7,15 @@ import {store} from "./store/store";
 import './firebase'
 
 
-
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
     <Provider store={store}>
-  <BrowserRouter>
-          <App />
+        <BrowserRouter>
+            <App/>
 
-  </BrowserRouter>
+        </BrowserRouter>
     </Provider>
 );
 
