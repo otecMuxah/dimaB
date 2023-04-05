@@ -20,94 +20,9 @@ button {
 
 button:hover {
   width: 35vw;
-  //border: 3px solid #2ecc71;
   border: 3px solid $blue;
   border-radius: 15px;
   background: transparent;
   letter-spacing: 1em;
   color: $blue;
 }
-
-//button:hover{
-//  border: 3px solid $blue;
-//  right: -25%;
-//}
-
-
-//.button{
-//
-//  position: fixed;
-//  top: 60%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//
-//
-//&__link{
-//  position: relative;
-//}
-//
-//button{
-//  display: block;
-//  width: 250px;
-//  height: 50px;
-//  line-height: 50px;
-//  font-weight: bold;
-//  text-decoration: none;
-//  background: rgba(86, 90, 177, 0.96);
-//  text-align: center;
-//  color: #fff;
-//  border-radius: 15px;
-//  text-transform: uppercase;
-//  letter-spacing: 4px;
-//  border: 3px solid  rgba(86, 90, 177, 0.96);
-//  transition: all .35s;
-//}
-//
-//&__icon{
-//  width: 50px;
-//  height: 50px;
-//  border: 3px solid transparent;
-//  position: absolute;
-//  transform: rotate(45deg);
-//  right: 0;
-//  top: 0;
-//  z-index: -1;
-//  transition: all .35s;
-//}
-//
-//&__icon svg{
-//  width: 30px;
-//  position: absolute;
-//  top: calc(50% - 15px);
-//  left: calc(50% - 15px);
-//  transform: rotate(-45deg);
-//  //fill: #2ecc71;
-//  fill:$blue ;
-//  transition: all .35s;
-//}
-//
-//button:hover{
-//  width:35vw;
-//  //border: 3px solid #2ecc71;
-//  border: 3px solid $blue;
-//  border-radius: 15px;
-//  background: transparent;
-//  letter-spacing: 1em;
-//  color: $blue;
-//}
-//
-//button:hover + .icon{
-//  border: 3px solid $blue;
-//  right: -25%;
-//}
-//
-//}
-//
-//@media (max-height: 850px){
-//  .button{
-//    top: 66%;
-//  }
-//  //p{
-//  //  font-size: 20px;
-//  //}
-//}
